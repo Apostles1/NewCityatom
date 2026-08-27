@@ -3,6 +3,7 @@
   "productName": "Atom",
   "version": "1.65.0-dev",
   "description": "A hackable text editor for the 21st Century.",
+  "homepage": "https://Apostles1.github.io/NewCityatom",
   "main": "./src/main-process/main.js",
   "repository": {
     "type": "git",
@@ -103,7 +104,7 @@
     "language-property-list": "git+https://github.com/atom/language-property-list.git#d2abd7d",
     "language-python": "git+https://github.com/atom/language-python.git#fd71825",
     "language-ruby": "git+https://github.com/atom/language-ruby.git#a8df725",
-    "language-ruby-on-rails": "git+https://github.com/atom/language-ruby-on-rails.git#c51d37c",
+    "language-ruby-on-rails": "git+https://github.com/atom/language-ruby-on-rails.git#c51d37b",
     "language-rust-bundled": "file:packages/language-rust-bundled",
     "language-sass": "git+https://github.com/atom/language-sass.git#32ee25f",
     "language-shellscript": "git+https://github.com/atom/language-shellscript.git#b4e9453",
@@ -270,7 +271,13 @@
   "private": true,
   "scripts": {
     "preinstall": "node -e 'process.exit(0)'",
+    "build": "echo \"No build step defined\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "node script/test"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   },
   "standard-engine": "./script/node_modules/standard",
   "standard": {
